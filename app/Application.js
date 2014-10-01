@@ -8,21 +8,21 @@ app.factory("employeeModel",function(){
 });
 
 app.factory("editEmpItemModel",function(){
-    var items = [];
-    var editItem = {};
+		var items = [];
+		var editItem = {};
 
-  var modify = {};
-   modify.addItem = function(item) {
-    items.push(item);
-    return 'added item';
-  };
-   modify.getItems = function() {
-    return editItem;
-  }
-   modify.setItems = function(item) {
-     this.editItem = item;
-  }
-  return modify; // returning this is very important
+	var modify = {};
+	 modify.addItem = function(item) {
+		items.push(item);
+		return 'added item';
+	};
+	 modify.getItems = function() {
+		return editItem;
+	}
+	 modify.setItems = function(item) {
+		 this.editItem = item;
+	}
+	return modify; // returning this is very important
 });
 
 /*
@@ -30,24 +30,24 @@ app.factory("editEmpItemModel",function(){
  */
 app.config(function ($routeProvider)
 {
-    $routeProvider
-        .when('/employees',
-        {
-        	controller:'EmployeeControllers',
-        	templateUrl:'app/templates/EmployeeCRUD.html'
-        }
-        )
-         .when('/add',
-        {
-            controller:'EmployeeControllers',
-            templateUrl:'app/templates/AddEmployee.html'
-        })
-        .when('/edit/:id',
-        {
-            controller:'EmployeeControllers',
-            templateUrl:'app/templates/EditEmployee.html'
-        })
-        .otherwise({ redirectTo: '/employees' });
+		$routeProvider
+				.when('/employees',
+				{
+					controller:'EmployeeControllers',
+					templateUrl:'app/templates/EmployeeCRUD.html'
+				}
+				)
+				 .when('/add',
+				{
+						controller:'EmployeeControllers',
+						templateUrl:'app/templates/AddEmployee.html'
+				})
+				.when('/edit/:id',
+				{
+						controller:'EmployeeControllers',
+						templateUrl:'app/templates/EditEmployee.html'
+				})
+				.otherwise({ redirectTo: '/employees' });
 });
 
 

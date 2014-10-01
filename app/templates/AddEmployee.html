@@ -2,54 +2,54 @@
 
 	<form name="employeeFrom" ng-submit="addEmp()" novalidate>
 
-		 <!-- NAME -->
-        <div class="form-group" ng-class="{ 'has-error' : employeeFrom.name.$invalid && !employeeFrom.name.$pristine }">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control" ng-model="name" required>
-            <p ng-show="employeeFrom.name.$invalid && !employeeFrom.name.$pristine" class="help-block">You name is required.</p>
-        </div>
+		
+		<div class="form-group" ng-class="{ 'has-error' : employeeFrom.name.$invalid && !employeeFrom.name.$pristine }">
+			<label>Name</label>
+			<input type="text" name="name" class="form-control" ng-model="name" required>
+			<p ng-show="employeeFrom.name.$invalid && !employeeFrom.name.$pristine" class="help-block">You name is required.</p>
+		</div>
 
-       
-       <div class="form-group" ng-class="{ 'has-error' : employeeFrom.username.$invalid && !employeeFrom.username.$pristine }">
-       	    <label class="control-label" for="password">State</label>
+	   
+	   <div class="form-group" ng-class="{ 'has-error' : employeeFrom.username.$invalid && !employeeFrom.username.$pristine }">
+			<label class="control-label" for="password">State</label>
 			<div class="dropdown">
 				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-				    Select State
-				    <span class="caret"></span>
+					Select State
+					<span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-				    
-				    <li ng-repeat="state in states"  role="presentation">
-				    	<a  href="" ng-click="value = 2">{{state.state}}</a>
-				    	<li role="presentation" class="divider"></li>
-				    </li>
-				    
-				    
+					
+					<li ng-repeat="state in states"  role="presentation">
+						<a  href="" ng-click="value = 2">{{state.state}}</a>
+						<li role="presentation" class="divider"></li>
+					</li>
+					
+					
 				  </ul>
 
 			</div>
-	    </div>
+		</div>
 
-	    <div class="form-group" ng-class="{ 'has-error' : employeeFrom.joiningdate.$invalid && !employeeFrom.joiningdate.$pristine }">
+		<div class="form-group" ng-class="{ 'has-error' : employeeFrom.joiningdate.$invalid && !employeeFrom.joiningdate.$pristine }">
 
-	    	 <label class="control-label" for="password">Joining Date</label>
+			 <label class="control-label" for="password">Joining Date</label>
 
 			<input type="date" id="exampleInput"  class="form-control"  name="joiningdate" ng-model="joiningDate"
-	       placeholder="yyyy-MM-dd" min="2013-01-01"  required />
+				placeholder="yyyy-MM-dd" min="2013-01-01"  required />
 
-  		 </div>
+		 </div>
 
 
-  		  <div class="form-group" ng-class="{ 'has-error' : employeeFrom.attritiondate.$invalid && !employeeFrom.attritiondate.$pristine }">
+		  <div class="form-group" ng-class="{ 'has-error' : employeeFrom.attritiondate.$invalid && !employeeFrom.attritiondate.$pristine }">
 
-	    	 <label class="control-label" for="password">Attrition Date</label>
+			 <label class="control-label" for="password">Attrition Date</label>
 
 			<input type="date" id="exampleInput"  class="form-control"  name="attritiondate" ng-model="attritiondDate" placeholder="yyyy-MM-dd" min="2013-01-01" ng-change="onAttritionDateChange()" required />
 
-  		 </div>
+		 </div>
 
-  		 <button name="submit" id="submit" value="" type="submit" class="btn btn-success" ng-disabled="employeeFrom.$invalid">Add</button>
-        
+		 <button name="submit" id="submit" value="" type="submit" class="btn btn-success" ng-disabled="employeeFrom.$invalid">Add</button>
+		
 	</form>
 
 </div>

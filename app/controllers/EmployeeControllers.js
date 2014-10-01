@@ -13,19 +13,14 @@ app.controller('EmployeeControllers', function ($scope, employeeModel,$routePara
 		if(empid > -1){
 				$scope.editItem =  angular.copy(employeeModel.employees[empid -1])
 				$scope.editItem.joiningDate = $filter("date")(Date.now(), 'yyyy-MM-dd');
-      }
+			}
 
-	
-
-	 $scope.editSave2 = function addEmployee(){
-	 	alert("dadfads")
+	 $scope.addEmp = function addEmployee(){
+		alert("dadfads")
 		 $scope.employeesList.
 		 push({"name":this.name,"state":this.state,"joiningDate":this.joiningDate,"attritiondDate":this.attritiondDate});
 		
 		}
-
-
-	 
 
 	 $scope.editSave = function saveEdit(empItem){
 				var empList = $scope.employeesList
@@ -54,15 +49,12 @@ app.controller('EmployeeControllers', function ($scope, employeeModel,$routePara
 				return true;
 		}            
 
-
 	 $scope.onAttritionDateChange = function(){
 		//  this.employeeFrom.attritiondate.$setPristine()
 		 // $scope.employeeFrom.attritiondate.$setViewValue("requried",false);
 		 // $scope.employeeFrom.$setDirty();
 			//$scope.employeeFrom.$setValidity('required', false);
 	 }
-
-
 	 $scope.states = [
 				{"state":"AX"},
 				{"state":"MN"},
