@@ -1,0 +1,59 @@
+<div class="container"> 
+
+
+
+ <ul >
+ 	<div class="row">
+ 		<div class="col-sm-2"> 
+ 			<div class="row"> States:</div>
+
+ 			<ul>
+ 				<li ng-repeat="state in states">
+ 					<input type="checkbox" ng-model="filter[state.state]"  >  {{state.state}}
+ 				</li>	
+
+ 			</ul>
+ 			
+ 		</div>
+
+ 		<div class="col-sm-10"> 
+ 			<li ng-repeat="employee in filtered=(employeesList | filter:filterStates)">
+	       <div class="row">
+			     <div class="col-sm-2 ">
+			     	{{employee.name }}
+			     </div>
+
+			     <div class="col-sm-2 ">
+			     	 {{employee.joiningDate}}
+			     </div>
+
+			     <div class="col-sm-2 ">
+			     	<input type='checkbox' ng-model='employee.state' ></input> {{employee.state }}
+			     </div>
+
+			     <div class="col-sm2">
+	               
+
+			     </div>
+
+			     <a href="#/edit/{{employee.id}}" class="btn btn-primary" >Edit</a>
+
+			     
+		    </div>
+	       
+	 		</li>
+	 	</div>
+
+ 		</div>
+	 	
+
+ 	
+
+
+ </ul>
+</div>
+
+
+
+
+       

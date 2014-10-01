@@ -1,0 +1,66 @@
+<div class="container">
+
+	
+
+	<form name="employeeFrom" ng-submit="editSave(editItem)" novalidate>
+
+		 <!-- NAME -->
+        <div class="form-group" ng-class="{ 'has-error' : employeeFrom.name.$invalid && !employeeFrom.name.$pristine }">
+            <label>Name </label>
+            <input type="text" name="name" class="form-control" ng-model="editItem.name" required>
+            <p ng-show="employeeFrom.name.$invalid && !employeeFrom.name.$pristine" class="help-block">You name is required.</p>
+        </div>
+
+       
+       <div class="form-group" ng-class="{ 'has-error' : employeeFrom.username.$invalid && !employeeFrom.username.$pristine }">
+       	    <label class="control-label" for="password">State</label>
+			<div class="dropdown">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+				    Select State
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    
+				    <li ng-repeat="state in states"  role="presentation">
+				    	<a  href="" ng-click="value = 2">{{state.state}}</a>
+				    	<li role="presentation" class="divider"></li>
+				    </li>
+				    
+				    
+				  </ul>
+
+			</div>
+	    </div>
+
+	    <div class="form-group" ng-class="{ 'has-error' : employeeFrom.joiningdate.$invalid && !employeeFrom.joiningdate.$pristine }">
+
+	    	 <label class="control-label" for="password">Joining Date</label>
+
+			<input type="date" id="exampleInput"  class="form-control"  name="joiningdate" 
+				ng-model="editItem.joiningDate"
+	       placeholder="yyyy-MM-dd"   required />
+
+	       {{editItem.joiningDate}}
+
+  		 </div>
+
+
+  		  <div class="form-group" ng-class="{ 'has-error' : employeeFrom.attritiondate.$invalid && !employeeFrom.attritiondate.$pristine }">
+
+	    	 <label class="control-label" for="password">Attrition Date</label>
+
+			<input type="date" id="exampleInput"  class="form-control"  name="attritiondate"
+			 ng-model="editItem.attritiondDate" placeholder="yyyy-MM-dd"  
+			  required />
+			
+
+  		 </div>
+
+  		   <input type="date" id="exampleInput" name="input" ng-model="value"
+         placeholder="yyyy-MM-dd"  required />
+
+  		 <button name="submit" id="submit" value="" type="submit" class="btn btn-success" ng-disabled="employeeFrom.$invalid">Add</button>
+        
+	</form>
+
+</div>
